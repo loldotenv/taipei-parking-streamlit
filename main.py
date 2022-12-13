@@ -53,7 +53,7 @@ with tab1:
                 break
         else:
             break
-        update_time = datetime.strptime(d["srcUpdateTime"], "%Y-%m-%d %H:%M:%S")
+        update_time = datetime.strptime(d["srcUpdateTime"], "%Y-%m-%d %H:%M:%S").astimezone()
         now = datetime.now(ZoneInfo("Asia/Taipei"))
         time_from_update = now - update_time
 
