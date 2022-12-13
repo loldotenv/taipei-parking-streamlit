@@ -1,5 +1,6 @@
 from typing import Optional
 from datetime import datetime
+from zoneinfo import ZoneInfo
 
 import streamlit as st
 import requests
@@ -53,7 +54,7 @@ with tab1:
         else:
             break
         update_time = datetime.strptime(d["srcUpdateTime"], "%Y-%m-%d %H:%M:%S")
-        now = datetime.now()
+        now = datetime.now(ZoneInfo("Asia/Taipei"))
         time_from_update = now - update_time
 
         minutes = time_from_update.seconds // 60
